@@ -26,6 +26,7 @@ if __name__ == "__main__":
     print(f"Question: {question}\n")
 
     # Use the simpler method for single invocation
+    #https://github.com/microsoft/promptflow/blob/main/examples/tutorials/run-flow-with-pipeline/pipeline.ipynb
     result = run_pipeline_locally(question)
 
     print("="*50)
