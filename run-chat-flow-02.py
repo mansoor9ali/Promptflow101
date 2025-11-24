@@ -1,7 +1,3 @@
-from pathlib import Path
-
-from azure.ai.ml import load_component
-from azure.ai.ml.dsl import pipeline
 from dotenv import load_dotenv
 from promptflow.client import PFClient
 from promptflow.tracing import trace
