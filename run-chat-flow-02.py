@@ -1,9 +1,8 @@
-import os
 from pathlib import Path
 
+from azure.ai.ml import load_component
 from azure.ai.ml.dsl import pipeline
 from dotenv import load_dotenv
-from azure.ai.ml import MLClient, Input, Output, load_component
 from promptflow.client import PFClient
 from promptflow.tracing import trace
 
@@ -44,15 +43,13 @@ def run_pipeline_locally(question: str = "What's the capital of France?"):
     pf = PFClient()
 
     # Test the flow with inline inputs
-    result = pf.test(
+    return pf.test(
         flow="./chat-flow-02",
         inputs={
             "question": question,
             "chat_history": []
         }
     )
-
-    return result
 
 
 if __name__ == "__main__":
