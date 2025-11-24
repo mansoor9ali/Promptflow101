@@ -30,3 +30,15 @@ nodes:
     model: hf:openai/gpt-oss-120b
   connection: synthetic_cnn
   api: chat
+- name: llm_gpt_oss_120b
+  type: custom_llm
+  source:
+    type: package_with_prompt
+    tool: promptflow.tools.llm.llm
+    path: llm_gpt_oss_120b.jinja2
+  inputs:
+    connection: synthetic_cnn
+    api: chat
+    model: hf:openai/gpt-oss-120b
+    question: what is  the capital of france?
+    
