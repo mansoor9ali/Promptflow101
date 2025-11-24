@@ -25,7 +25,7 @@ def chat(question: str = "What's the capital of France?") -> str:
         # load environment variables from .env file
         load_dotenv()
 
-    prompty = Prompty.load(source=BASE_DIR / "pf-test-01.prompty")
+    prompty = Prompty.load(source=BASE_DIR / "prompties/pf-test-01.prompty")
     # trigger a llm call with the prompty obj
     output = prompty(question=question)
     return output
